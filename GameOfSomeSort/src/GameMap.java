@@ -13,6 +13,15 @@ public class GameMap {
      * Default constructor. No need for others.
      */
     public GameMap() {
+        /*
+         * Draw Grass
+         */
+
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < 100; j++) {
+                this.drawGrass(i, j);
+            }
+        }
         this.init();
     }
 
@@ -38,14 +47,14 @@ public class GameMap {
         // Bottom
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 100; j++) {
-                this.drawWater(i + 97, j + 97);
+                this.drawWater(i + 97, j);
             }
         }
 
         // Right
         for (int i = 0; i < 100; i++) {
             for (int j = 0; j < 2; j++) {
-                this.drawWater(i + 97, j + 97);
+                this.drawWater(i, j + 97);
             }
         }
 
@@ -79,7 +88,7 @@ public class GameMap {
 
         for (int i = 60; i < 97; i++) {
             for (int j = 51; j < 97; j++) {
-                this.map[i][j] = new SandTile();
+                this.drawSand(i, j);
             }
         }
 
@@ -105,17 +114,6 @@ public class GameMap {
             }
         }
 
-        /*
-         * Draw Grass
-         */
-
-        for (int i = 0; i < 100; i++) {
-            for (int j = 0; j < 100; j++) {
-                if (this.map[i][j].equals(null)) {
-                    this.drawGrass(i, j);
-                }
-            }
-        }
     }
 
     /**
@@ -127,7 +125,7 @@ public class GameMap {
      *            column
      */
     private void drawWater(int i, int j) {
-        this.map[i][j] = new WaterTile();
+        this.map[i][j] = new WaterTile(i, j);
     }
 
     /**
@@ -139,7 +137,7 @@ public class GameMap {
      *            column
      */
     private void drawSand(int i, int j) {
-        this.map[i][j] = new SandTile();
+        this.map[i][j] = new SandTile(i, j);
     }
 
     /**
@@ -151,7 +149,7 @@ public class GameMap {
      *            column
      */
     private void drawGrass(int i, int j) {
-        this.map[i][j] = new GrassTile();
+        this.map[i][j] = new GrassTile(i, j);
     }
 
     /**
@@ -163,7 +161,7 @@ public class GameMap {
      *            column
      */
     private void drawBridge(int i, int j) {
-        this.map[i][j] = new BridgeTile();
+        this.map[i][j] = new BridgeTile(i, j);
     }
 
     /**
@@ -175,7 +173,7 @@ public class GameMap {
      *            column
      */
     private void drawMountain(int i, int j) {
-        this.map[i][j] = new MountainTile();
+        this.map[i][j] = new MountainTile(i, j);
     }
 
     /**
@@ -187,6 +185,6 @@ public class GameMap {
      *            column
      */
     private void drawRiver(int i, int j) {
-        this.map[i][j] = new RiverTile();
+        this.map[i][j] = new RiverTile(i, j);
     }
 }

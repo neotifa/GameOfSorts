@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.HeadlessException;
+import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
 
@@ -36,6 +37,7 @@ public class Window extends JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setResizable(RESIZABLE);
         this.setLayout(new BorderLayout());
+        this.setLocationRelativeTo(null);
 
         GamePanel game = new GamePanel();
         this.add(game, BorderLayout.CENTER);
@@ -44,6 +46,15 @@ public class Window extends JFrame {
         this.add(hud, BorderLayout.SOUTH);
 
         this.setVisible(VISIBLE);
+
+    }
+
+    public void tick() {
+
+    }
+
+    public void render() {
+        BufferStrategy bs = this.getBufferStrategy();
 
     }
 
