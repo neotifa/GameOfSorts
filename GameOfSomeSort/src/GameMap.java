@@ -13,11 +13,21 @@ public class GameMap {
      * Default constructor. No need for others.
      */
     private GameMap() {
-
+        this.init();
     }
 
     private void init() {
+        // TODO: Draw Ocean
 
+        // TODO: Draw River
+
+        // TODO: Draw Desert1
+
+        // TODO: Draw Desert2
+
+        // TODO: Draw Mountains
+
+        // TODO: Draw Grass
     }
 
     private void drawWater() {
