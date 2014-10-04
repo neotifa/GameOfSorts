@@ -1,4 +1,3 @@
-import java.awt.Image;
 
 /**
  * Mountain tile object.
@@ -13,31 +12,8 @@ public class MountainTile extends Tile {
      */
     private static final String DEFAULT_MOUNTAIN = "images/default_mountain.png";
 
-    private boolean traversable = false;
-    Image img = null;
-
-    public MountainTile() {
-        super(DEFAULT_MOUNTAIN);
-    }
-
-    @Override
-    public void setImage(String imgFile) {
-        super.setImage(imgFile);
-    }
-
-    @Override
-    public Image getImage() {
-        return super.getImage();
-    }
-
-    @Override
-    public void setTraversable(boolean traversable) {
-        super.setTraversable(traversable);
-    }
-
-    @Override
-    public boolean isTraversable() {
-        return super.isTraversable();
+    public MountainTile(int x, int y) {
+        super(DEFAULT_MOUNTAIN, x, y);
     }
 
 }

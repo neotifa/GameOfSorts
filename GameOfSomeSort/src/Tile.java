@@ -21,6 +21,8 @@ public class Tile {
 
     private boolean traversable = false;
     private BufferedImage img = null;
+    private int x = 0;
+    private int y = 0;
 
     /**
      * Default Constructor.
@@ -37,8 +39,10 @@ public class Tile {
      * @requires imgFile != null & is valid file path
      * 
      */
-    public Tile(String imgFile) {
+    public Tile(String imgFile, int x, int y) {
         this.setImage(imgFile);
+        this.setX(x);
+        this.setY(y);
     }
 
     /**
@@ -79,4 +83,19 @@ public class Tile {
         return this.img;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getX() {
+        return this.x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getY() {
+        return this.y;
+    }
 }

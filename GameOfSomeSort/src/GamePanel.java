@@ -1,6 +1,4 @@
-import java.awt.Color;
-
-import javax.swing.JPanel;
+import java.awt.Canvas;
 
 /**
  * Main game panel.
@@ -8,18 +6,18 @@ import javax.swing.JPanel;
  * @author Erica Boyer
  * 
  */
-public class GamePanel extends JPanel {
+public class GamePanel extends Canvas {
 
     /**
      * 
      */
     private static final long serialVersionUID = 1L;
-    private GameMap map = new GameMap();
+
+    private GameMap map;
 
     public GamePanel() {
-
-        this.setBackground(Color.BLACK);
-
+        System.out.println("Generating map...");
+        this.map = new GameMap();
     }
 
 }

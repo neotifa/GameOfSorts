@@ -2,6 +2,7 @@ GameOfSorts
 ===========
 
 Since my team apparently disbanded, I'm all alone again, so I'm just gonna start coding and see where it goes. :/
+Well, 1 guy came back and my class partner came to help. Thanks Matt and Bryan! :D
 
 I've never actually done an RPG before as I've only ever done "shooters" and "arcade" type games, so I'm going to try that. I'm first going to get some GUI going, maybe a tile scrolling engine with crap graphics, and move forward from there.
 
@@ -11,7 +12,7 @@ TODOs (and done dids):
 
 -Make tile scrolling engine
 
--Make tile images
++Make tile images
 
 -Create player
 
@@ -19,7 +20,7 @@ TODOs (and done dids):
 
 -Animate player image
 
--Add enemies
++Add enemies
 
 -Make images for enemies
 
