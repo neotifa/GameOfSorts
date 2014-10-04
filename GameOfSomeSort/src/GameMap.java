@@ -7,46 +7,186 @@
 
 public class GameMap {
 
-    private static final Tile[][] map = new Tile[100][100];
+    private final Tile[][] map = new Tile[100][100];
 
     /*
      * Default constructor. No need for others.
      */
-    private GameMap() {
+    public GameMap() {
         this.init();
     }
 
     private void init() {
-        // TODO: Draw Ocean
+        /*
+         * Draw ocean (bordering 2 tiles)
+         */
 
-        // TODO: Draw River
+        // Top
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 100; j++) {
+                this.drawWater(i, j);
+            }
+        }
 
-        // TODO: Draw Desert1
+        // Left
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < 2; j++) {
+                this.drawWater(i, j);
+            }
+        }
 
-        // TODO: Draw Desert2
+        // Bottom
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 100; j++) {
+                this.drawWater(i + 97, j + 97);
+            }
+        }
 
-        // TODO: Draw Mountains
+        // Right
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < 2; j++) {
+                this.drawWater(i + 97, j + 97);
+            }
+        }
 
-        // TODO: Draw Grass
+        /*
+         * Draw River
+         */
+
+        for (int i = 20; i < 97; i++) {
+            this.drawRiver(i, 50);
+            ;
+        }
+
+        /*
+         * Draw Bridge
+         */
+
+        this.drawBridge(50, 50);
+        /*
+         * Draw Desert1
+         */
+
+        for (int i = 14; i < 28; i++) {
+            for (int j = 20; j < 80; j++) {
+                this.drawSand(i, j);
+            }
+        }
+
+        /*
+         * Draw Desert2
+         */
+
+        for (int i = 60; i < 97; i++) {
+            for (int j = 51; j < 97; j++) {
+                this.map[i][j] = new SandTile();
+            }
+        }
+
+        /*
+         * Draw mountains (Underneath top ocean in an inverted triangle cluster)
+         */
+
+        for (int i = 2; i < 6; i++) {
+            for (int j = 2; j < 97; j++) {
+                this.drawMountain(i, j);
+            }
+        }
+
+        for (int i = 6; i < 10; i++) {
+            for (int j = 12; j < 88; j++) {
+                this.drawMountain(i, j);
+            }
+        }
+
+        for (int i = 11; i < 20; i++) {
+            for (int j = 27; j < 72; j++) {
+                this.drawMountain(i, j);
+            }
+        }
+
+        /*
+         * Draw Grass
+         */
+
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < 100; j++) {
+                if (this.map[i][j].equals(null)) {
+                    this.drawGrass(i, j);
+                }
+            }
+        }
     }
 
-    private void drawWater() {
-
+    /**
+     * Creates a WaterTile object and places it in the map at location [i][j]
+     * 
+     * @param i
+     *            row
+     * @param j
+     *            column
+     */
+    private void drawWater(int i, int j) {
+        this.map[i][j] = new WaterTile();
     }
 
-    private void drawSand() {
-
+    /**
+     * Creates a SandTile object and places it in the map at location [i][j]
+     * 
+     * @param i
+     *            row
+     * @param j
+     *            column
+     */
+    private void drawSand(int i, int j) {
+        this.map[i][j] = new SandTile();
     }
 
-    private void drawGrass() {
-
+    /**
+     * Creates a GrassTile object and places it in the map at location [i][j]
+     * 
+     * @param i
+     *            row
+     * @param j
+     *            column
+     */
+    private void drawGrass(int i, int j) {
+        this.map[i][j] = new GrassTile();
     }
 
-    private void drawBridge() {
-
+    /**
+     * Creates a BridgeTile object and places it in the map at location [i][j]
+     * 
+     * @param i
+     *            row
+     * @param j
+     *            column
+     */
+    private void drawBridge(int i, int j) {
+        this.map[i][j] = new BridgeTile();
     }
 
-    private void drawMountain() {
+    /**
+     * Creates a MountainTile object and places it in the map at location [i][j]
+     * 
+     * @param i
+     *            row
+     * @param j
+     *            column
+     */
+    private void drawMountain(int i, int j) {
+        this.map[i][j] = new MountainTile();
+    }
 
+    /**
+     * Creates a MountainTile object and places it in the map at location [i][j]
+     * 
+     * @param i
+     *            row
+     * @param j
+     *            column
+     */
+    private void drawRiver(int i, int j) {
+        this.map[i][j] = new RiverTile();
     }
 }
