@@ -11,8 +11,8 @@ public class BridgeTile extends Tile {
      */
     private static final String DEFAULT_BRIDGE = "images/default_bridge.png";
 
-    public BridgeTile(int x, int y) {
-        super(DEFAULT_BRIDGE, x, y);
+    public BridgeTile(int x, int y, GamePanel gp) {
+        super(DEFAULT_BRIDGE, x, y, gp);
         super.setTraversable(true);
     }
 

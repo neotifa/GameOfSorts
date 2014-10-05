@@ -1,10 +1,14 @@
+import java.util.Map;
+import java.util.TreeMap;
+
 public abstract class Player {
     private String name;
-    private int health;
-    private int maxHealth;
-    private int magic;
-    private int maxMagic;
+    private int health = 100;
+    private int maxHealth = 100;
+    private int magic = 20;
+    private int maxMagic = 20;
     private boolean isDead = false;
+    private Map<Item, Integer> inventory = new TreeMap<Item, Integer>();
 
     public Player(String name, int health) {
         this.name = name;

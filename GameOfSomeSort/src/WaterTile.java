@@ -1,4 +1,3 @@
-
 /**
  * Water tile object.
  * 
@@ -12,8 +11,8 @@ public class WaterTile extends Tile {
      */
     private static final String DEFAULT_WATER = "images/default_water.png";
 
-    public WaterTile(int x, int y) {
-        super(DEFAULT_WATER, x, y);
+    public WaterTile(int x, int y, GamePanel gp) {
+        super(DEFAULT_WATER, x, y, gp);
         super.setTraversable(false);
     }
 

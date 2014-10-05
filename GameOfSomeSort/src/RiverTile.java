@@ -11,8 +11,8 @@ public class RiverTile extends Tile {
      */
     private static final String DEFAULT_RIVER = "images/default_river.png";
 
-    public RiverTile(int x, int y) {
-        super(DEFAULT_RIVER, x, y);
+    public RiverTile(int x, int y, GamePanel gp) {
+        super(DEFAULT_RIVER, x, y, gp);
         super.setTraversable(false);
     }
 

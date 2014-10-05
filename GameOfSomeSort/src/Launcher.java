@@ -8,6 +8,7 @@ public class Launcher implements Runnable {
 
     private boolean running = false;
     Window w;
+    Thread t;
 
     public Launcher() {
 
@@ -18,14 +19,15 @@ public class Launcher implements Runnable {
     @Override
     public void run() {
         while (this.running) {
-            this.w.tick();
-            this.w.render();
+            this.w.game.tick();
+            this.w.game.render();
         }
     }
 
     public synchronized void start() {
         this.running = true;
-        Thread t = new Thread(this);
+        this.t = new Thread(this);
+        this.t.start();
         System.out.println("Starting game...");
     }
 

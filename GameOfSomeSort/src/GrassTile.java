@@ -1,4 +1,3 @@
-
 /**
  * 
  * Grass tile object.
@@ -13,8 +12,8 @@ public class GrassTile extends Tile {
      */
     private static final String DEFAULT_GRASS = "images/default_grass.png";
 
-    public GrassTile(int x, int y) {
-        super(DEFAULT_GRASS, x, y);
+    public GrassTile(int x, int y, GamePanel gp) {
+        super(DEFAULT_GRASS, x, y, gp);
         super.setTraversable(true);
     }
 

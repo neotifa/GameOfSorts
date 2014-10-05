@@ -1,6 +1,5 @@
 import java.awt.BorderLayout;
 import java.awt.HeadlessException;
-import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
 
@@ -15,11 +14,14 @@ import javax.swing.JFrame;
 @SuppressWarnings("serial")
 public class Window extends JFrame {
 
-    private static final int WIDTH = 800;
-    private static final int HEIGHT = 600;
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 600;
     private static final String TITLE = "The Game";
     private static final boolean VISIBLE = true;
     private static final boolean RESIZABLE = false;
+
+    GamePanel game;
+    HUDPanel hud;
 
     /**
      * 
@@ -39,22 +41,14 @@ public class Window extends JFrame {
         this.setLayout(new BorderLayout());
         this.setLocationRelativeTo(null);
 
-        GamePanel game = new GamePanel();
-        this.add(game, BorderLayout.CENTER);
+        this.game = new GamePanel(this);
+        this.add(this.game, BorderLayout.CENTER);
 
-        HUDPanel hud = new HUDPanel();
-        this.add(hud, BorderLayout.SOUTH);
+        this.hud = new HUDPanel();
+        this.add(this.hud, BorderLayout.SOUTH);
 
+        this.pack();
         this.setVisible(VISIBLE);
-
-    }
-
-    public void tick() {
-
-    }
-
-    public void render() {
-        BufferStrategy bs = this.getBufferStrategy();
 
     }
 

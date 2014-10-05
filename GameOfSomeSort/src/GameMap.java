@@ -7,12 +7,13 @@
 
 public class GameMap {
 
-    private final Tile[][] map = new Tile[100][100];
+    private final Tile map[][] = new Tile[100][100];
+    GamePanel gp;
 
     /*
      * Default constructor. No need for others.
      */
-    public GameMap() {
+    public GameMap(GamePanel gp) {
         /*
          * Draw Grass
          */
@@ -23,6 +24,8 @@ public class GameMap {
             }
         }
         this.init();
+
+        this.gp = gp;
     }
 
     private void init() {
@@ -125,7 +128,7 @@ public class GameMap {
      *            column
      */
     private void drawWater(int i, int j) {
-        this.map[i][j] = new WaterTile(i, j);
+        this.map[i][j] = new WaterTile(i, j, this.gp);
     }
 
     /**
@@ -137,7 +140,7 @@ public class GameMap {
      *            column
      */
     private void drawSand(int i, int j) {
-        this.map[i][j] = new SandTile(i, j);
+        this.map[i][j] = new SandTile(i, j, this.gp);
     }
 
     /**
@@ -149,7 +152,7 @@ public class GameMap {
      *            column
      */
     private void drawGrass(int i, int j) {
-        this.map[i][j] = new GrassTile(i, j);
+        this.map[i][j] = new GrassTile(i, j, this.gp);
     }
 
     /**
@@ -161,7 +164,7 @@ public class GameMap {
      *            column
      */
     private void drawBridge(int i, int j) {
-        this.map[i][j] = new BridgeTile(i, j);
+        this.map[i][j] = new BridgeTile(i, j, this.gp);
     }
 
     /**
@@ -173,7 +176,7 @@ public class GameMap {
      *            column
      */
     private void drawMountain(int i, int j) {
-        this.map[i][j] = new MountainTile(i, j);
+        this.map[i][j] = new MountainTile(i, j, this.gp);
     }
 
     /**
@@ -185,6 +188,17 @@ public class GameMap {
      *            column
      */
     private void drawRiver(int i, int j) {
-        this.map[i][j] = new RiverTile(i, j);
+        this.map[i][j] = new RiverTile(i, j, this.gp);
+    }
+
+    /**
+     * Returns the Tile object at location [i, j].
+     * 
+     * @param i
+     * @param j
+     * @return Tile object
+     */
+    public Tile getTile(int i, int j) {
+        return this.map[i][j];
     }
 }

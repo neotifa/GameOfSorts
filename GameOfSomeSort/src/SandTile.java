@@ -1,4 +1,3 @@
-
 /**
  * Sand tile object.
  * 
@@ -12,8 +11,8 @@ public class SandTile extends Tile {
      */
     private static final String DEFAULT_SAND = "images/default_sand.png";
 
-    public SandTile(int x, int y) {
-        super(DEFAULT_SAND, x, y);
+    public SandTile(int x, int y, GamePanel gp) {
+        super(DEFAULT_SAND, x, y, gp);
         super.setTraversable(true);
     }
 

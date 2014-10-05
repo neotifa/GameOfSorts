@@ -16,11 +16,11 @@ public class HUDPanel extends JPanel {
 
     private String hp = "100";
     private String mp = "20";
-    private String score = "0";
+    private String gold = "0";
 
     private JLabel HP = new JLabel("HP: " + this.hp);
     private JLabel MP = new JLabel("MP: " + this.mp);
-    private JLabel Score = new JLabel("Score: " + this.score);
+    private JLabel Gold = new JLabel("Gold: " + this.gold);
 
     public HUDPanel() {
 
@@ -31,8 +31,8 @@ public class HUDPanel extends JPanel {
 
         this.add(this.HP);
         this.HP.setForeground(Color.WHITE);
-        this.add(this.Score);
-        this.Score.setForeground(Color.WHITE);
+        this.add(this.Gold);
+        this.Gold.setForeground(Color.WHITE);
         this.add(this.MP);
         this.MP.setForeground(Color.WHITE);
     }
