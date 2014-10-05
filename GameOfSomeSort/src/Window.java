@@ -5,12 +5,12 @@ import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
 
 /**
- * 
+ *
  */
 
 /**
  * @author Erica Boyer
- * 
+ *
  */
 @SuppressWarnings("serial")
 public class Window extends JFrame {
@@ -22,13 +22,13 @@ public class Window extends JFrame {
     private static final boolean RESIZABLE = false;
 
     /**
-     * 
+     *
      * This is going to be the only constructor because I want as little
      * interference as possible.
-     * 
+     *
      * @param arg0
      * @throws HeadlessException
-     * 
+     *
      */
     public Window() throws HeadlessException {
 

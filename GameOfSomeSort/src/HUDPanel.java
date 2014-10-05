@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 
 /**
  * @author eboyer
- * 
+ *
  */
 public class HUDPanel extends JPanel {
 
@@ -35,5 +35,8 @@ public class HUDPanel extends JPanel {
         this.Score.setForeground(Color.WHITE);
         this.add(this.MP);
         this.MP.setForeground(Color.WHITE);
+        Animation a = new Animation();
+        this.add(a);
+
     }
 }

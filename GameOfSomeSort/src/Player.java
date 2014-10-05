@@ -28,6 +28,15 @@ public abstract class Player {
         }
     }
 
+    public void healDamage(int heal) {
+        //manipulate the amount of damage taken
+        if (this.health + heal <= this.maxHealth) {
+            this.health += heal;
+        } else {
+            this.health = this.maxHealth;
+        }
+    }
+
     public boolean isDead() {
         return this.isDead;
     }
